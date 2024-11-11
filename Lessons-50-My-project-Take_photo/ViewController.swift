@@ -44,7 +44,7 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
         
         DispatchQueue.main.async {
             // Сортировка и обновление UI на главном потоке
-            self.photos.sort { $0.nameImage < $1.nameImage }  // Сортировка по имени изображения
+            self.photos.sort { $0.dateAdded > $1.dateAdded }  // Сортировка по имени изображения
             self.tableView.reloadData() // Обновление таблицы после завершения загрузки
         }
     }
@@ -158,8 +158,9 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
             let photoName = name?.isEmpty == false ? name! : "Unknown"
             
             // Создаем и сохраняем объект ImageSave
-            let photo = ImageSave(nameImage: photoName, viewCount: 0, imageUID: imageName)
+            let photo = ImageSave(nameImage: photoName, viewCount: 0, imageUID: imageName, dateAdded: Date())
             self.photos.append(photo)
+            self.photos.sort { $0.dateAdded > $1.dateAdded } 
             self.tableView.reloadData()
             save()
         }
@@ -198,4 +199,23 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
         self.tableView.reloadData()
         save()
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let photoToDelete = photos[indexPath.row]
+            
+            // Удаляем фото из массива
+            photos.remove(at: indexPath.row)
+            
+            // Обновляем таблицу
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            // Сохраняем изменения
+            save()
+            
+            // Вызываем делегат для обработки удаления
+            didDeletePhoto(photo: photoToDelete)
+        }
+    }
+
 }

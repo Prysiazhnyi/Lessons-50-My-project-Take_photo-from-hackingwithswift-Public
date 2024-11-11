@@ -27,7 +27,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(reName))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(reName))
     
         title = selectedPhoto?.nameImage ?? "Unknown"
         navigationItem.largeTitleDisplayMode = .never
@@ -74,7 +74,7 @@ class DetailViewController: UIViewController {
 
     // Функция для создания действия редактирования
     private func createEditAction(photo: ImageSave) -> UIAlertAction {
-          return UIAlertAction(title: "Edit", style: .default) { [weak self] _ in
+          return UIAlertAction(title: "Edit name", style: .default) { [weak self] _ in
               guard let self = self else { return }
               
               var updatedPhoto = photo // Копируем объект в изменяемую переменную
