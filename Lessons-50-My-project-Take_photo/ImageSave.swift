@@ -11,5 +11,5 @@ struct ImageSave: Codable {
     
     var nameImage: String
     var viewCount: Int
-    var image: String
+    var imageUID: String
 }

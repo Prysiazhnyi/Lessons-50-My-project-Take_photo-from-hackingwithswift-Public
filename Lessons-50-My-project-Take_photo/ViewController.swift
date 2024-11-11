@@ -7,7 +7,15 @@
 
 import UIKit
 
-class ViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+protocol ViewControllerDetailViewControllerDelegate: AnyObject {
+    func didDeletePhoto(photo: ImageSave)
+    func updatePhotoList(with photos: [ImageSave])
+    func didUpdatePhoto(photo: ImageSave)
+}
+
+class ViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ViewControllerDetailViewControllerDelegate {
+   
+    
     
     var photos = [ImageSave]()
     
@@ -65,12 +73,9 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
         tableView.reloadData()
         save()
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
-            vc.selectPath = getDocumentsDirectory().appendingPathComponent(photos[indexPath.row].image)
-            vc.selectedImage = photos[indexPath.row].nameImage
-            vc.selectedPictureNumber = indexPath.row + 1
-            vc.totalPictures = photos.count
-            vc.imageName = photos[indexPath.row].nameImage
-            
+           vc.selectPath = getDocumentsDirectory().appendingPathComponent(photos[indexPath.row].imageUID)
+            vc.selectedPhoto = photos[indexPath.row]
+            vc.delegate = self // Устанавливаем делегат
             navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -153,9 +158,10 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
             let photoName = name?.isEmpty == false ? name! : "Unknown"
             
             // Создаем и сохраняем объект ImageSave
-            let photo = ImageSave(nameImage: photoName, viewCount: 0, image: imageName)
+            let photo = ImageSave(nameImage: photoName, viewCount: 0, imageUID: imageName)
             self.photos.append(photo)
             self.tableView.reloadData()
+            save()
         }
         
         alertController.addAction(saveAction)
@@ -167,11 +173,29 @@ class ViewController: UITableViewController, UIImagePickerControllerDelegate, UI
         }
     }
     
-    
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
     
+    func didDeletePhoto(photo: ImageSave) {
+        // Удаляем фото из массива в главном потоке
+        DispatchQueue.main.async {
+            if let index = self.photos.firstIndex(where: { $0.imageUID == photo.imageUID }) {
+                self.photos.remove(at: index)
+                self.tableView.reloadData() // Обновляем таблицу
+                self.save() // Сохраняем данные сразу после изменения массива
+            }
+        }
+    }
+    func updatePhotoList(with photos: [ImageSave]) {
+        self.photos = photos
+        self.tableView.reloadData()
+        save()
+    }
+    
+    func didUpdatePhoto(photo: ImageSave) {
+        self.tableView.reloadData()
+        save()
+    }
 }
-
