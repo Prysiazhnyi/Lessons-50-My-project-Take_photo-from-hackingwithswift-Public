@@ -7,24 +7,33 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+protocol DetailViewControllerDelegate: AnyObject {
+    func didDeletePerson(at indexPath: IndexPath)
+}
 
+class DetailViewController: UIViewController {
+    
     @IBOutlet var imageView: UIImageView!
     
     var selectedImage: String?
     var selectedPictureNumber = 0
     var totalPictures = 0
+    var selectPath: URL?
+    var imageName:  String?
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        title = "This image is \(selectedPictureNumber) from \(totalPictures)"
+        
+        title = imageName ?? "This image is \(selectedPictureNumber) from \(totalPictures)"
         navigationItem.largeTitleDisplayMode = .never
-        if let imageToLoad = selectedImage {
-            imageView.image  = UIImage(named: imageToLoad)
+        if let path = selectPath {
+            imageView.image = UIImage(contentsOfFile: path.path)
         }
+        
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.hidesBarsOnTap = true
