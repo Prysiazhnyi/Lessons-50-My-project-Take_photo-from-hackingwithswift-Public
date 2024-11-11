@@ -7,26 +7,26 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		E029BBF62CE204AE00872A45 /* Lessons-50-My-project-Take_foto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lessons-50-My-project-Take_foto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E029BBF62CE204AE00872A45 /* Lessons-50-My-project-Take_photo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lessons-50-My-project-Take_photo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		E029BC082CE204AF00872A45 /* Exceptions for "Lessons-50-My-project-Take_foto" folder in "Lessons-50-My-project-Take_foto" target */ = {
+		E029BC082CE204AF00872A45 /* Exceptions for "Lessons-50-My-project-Take_photo" folder in "Lessons-50-My-project-Take_photo" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = E029BBF52CE204AE00872A45 /* Lessons-50-My-project-Take_foto */;
+			target = E029BBF52CE204AE00872A45 /* Lessons-50-My-project-Take_photo */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		E029BBF82CE204AE00872A45 /* Lessons-50-My-project-Take_foto */ = {
+		E029BBF82CE204AE00872A45 /* Lessons-50-My-project-Take_photo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				E029BC082CE204AF00872A45 /* Exceptions for "Lessons-50-My-project-Take_foto" folder in "Lessons-50-My-project-Take_foto" target */,
+				E029BC082CE204AF00872A45 /* Exceptions for "Lessons-50-My-project-Take_photo" folder in "Lessons-50-My-project-Take_photo" target */,
 			);
-			path = "Lessons-50-My-project-Take_foto";
+			path = "Lessons-50-My-project-Take_photo";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -45,7 +45,7 @@
 		E029BBED2CE204AE00872A45 = {
 			isa = PBXGroup;
 			children = (
-				E029BBF82CE204AE00872A45 /* Lessons-50-My-project-Take_foto */,
+				E029BBF82CE204AE00872A45 /* Lessons-50-My-project-Take_photo */,
 				E029BBF72CE204AE00872A45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,7 +53,7 @@
 		E029BBF72CE204AE00872A45 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E029BBF62CE204AE00872A45 /* Lessons-50-My-project-Take_foto.app */,
+				E029BBF62CE204AE00872A45 /* Lessons-50-My-project-Take_photo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,9 +61,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E029BBF52CE204AE00872A45 /* Lessons-50-My-project-Take_foto */ = {
+		E029BBF52CE204AE00872A45 /* Lessons-50-My-project-Take_photo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E029BC092CE204AF00872A45 /* Build configuration list for PBXNativeTarget "Lessons-50-My-project-Take_foto" */;
+			buildConfigurationList = E029BC092CE204AF00872A45 /* Build configuration list for PBXNativeTarget "Lessons-50-My-project-Take_photo" */;
 			buildPhases = (
 				E029BBF22CE204AE00872A45 /* Sources */,
 				E029BBF32CE204AE00872A45 /* Frameworks */,
@@ -74,13 +74,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				E029BBF82CE204AE00872A45 /* Lessons-50-My-project-Take_foto */,
+				E029BBF82CE204AE00872A45 /* Lessons-50-My-project-Take_photo */,
 			);
-			name = "Lessons-50-My-project-Take_foto";
+			name = "Lessons-50-My-project-Take_photo";
 			packageProductDependencies = (
 			);
 			productName = "Lessons-50-My-project-Take_foto";
-			productReference = E029BBF62CE204AE00872A45 /* Lessons-50-My-project-Take_foto.app */;
+			productReference = E029BBF62CE204AE00872A45 /* Lessons-50-My-project-Take_photo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -98,7 +98,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E029BBF12CE204AE00872A45 /* Build configuration list for PBXProject "Lessons-50-My-project-Take_foto" */;
+			buildConfigurationList = E029BBF12CE204AE00872A45 /* Build configuration list for PBXProject "Lessons-50-My-project-Take_photo" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -112,7 +112,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E029BBF52CE204AE00872A45 /* Lessons-50-My-project-Take_foto */,
+				E029BBF52CE204AE00872A45 /* Lessons-50-My-project-Take_photo */,
 			);
 		};
 /* End PBXProject section */
@@ -147,12 +147,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S9UP438A73;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Lessons-50-My-project-Take_foto/Info.plist";
+				INFOPLIST_FILE = "Lessons-50-My-project-Take_photo/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Take a foto";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -175,12 +177,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S9UP438A73;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Lessons-50-My-project-Take_foto/Info.plist";
+				INFOPLIST_FILE = "Lessons-50-My-project-Take_photo/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Take a foto";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,7 +320,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E029BBF12CE204AE00872A45 /* Build configuration list for PBXProject "Lessons-50-My-project-Take_foto" */ = {
+		E029BBF12CE204AE00872A45 /* Build configuration list for PBXProject "Lessons-50-My-project-Take_photo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E029BC0C2CE204AF00872A45 /* Debug */,
@@ -325,7 +329,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E029BC092CE204AF00872A45 /* Build configuration list for PBXNativeTarget "Lessons-50-My-project-Take_foto" */ = {
+		E029BC092CE204AF00872A45 /* Build configuration list for PBXNativeTarget "Lessons-50-My-project-Take_photo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E029BC0A2CE204AF00872A45 /* Debug */,
